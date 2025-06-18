@@ -1,0 +1,33 @@
+{
+  "name": "@petristation/renewjs",
+  "version": "1.0.1",
+  "description": "Parser for .rnw files",
+  "keywords": [
+    "renew",
+    "petrinets",
+    "parser",
+    "petristation"
+  ],
+  "license": "MIT",
+  "author": "Laszlo Korte",
+  "type": "module",
+  "main": "index.js",
+  "files": [
+    "src/compare.js",
+    "src/cycle.js",
+    "src/grammar.js",
+    "src/hierarchy.js",
+    "src/index.js",
+    "src/parser.js",
+    "src/reader.js",
+    "src/serializer.js",
+    "src/symbols.js",
+    "src/tokenizer.js"
+  ],
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
