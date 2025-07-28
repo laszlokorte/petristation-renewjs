@@ -20,7 +20,7 @@ export const tokenizer = makeTokenizer([
 ])
 
 export {kindKey, selfKey, refKey}
-export {makeParser, makeGrammar}
+export {makeSerializer, makeParser, makeGrammar}
 
 export const reader = makeReader(tokenizer)
 
