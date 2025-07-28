@@ -1,7 +1,7 @@
 import {kindKey, refKey, selfKey} from './symbols.js'
 
-export function makeSerializer(grammar) {
-	return function serializer(sourceRefMap, metaKeys) {
+export function makeSerializer(grammar, metaKeys) {
+	return function serializer(sourceRefMap) {
 		const output = []
 		const outputRefMap = []
 		let indent = 0;
