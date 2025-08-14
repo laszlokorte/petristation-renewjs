@@ -149,6 +149,8 @@ export function makeGrammar(version) {
 					if(object.attributes) {
 						context.writeString("attributes")
 						context.writeImplicitStorable("CH.ifa.draw.figures.FigureAttributes", object.attributes);
+					} else {
+						context.writeString("no_attributes")
 					}
 				},
 			},
@@ -688,7 +690,7 @@ export function makeGrammar(version) {
 				writer: (object, context) => {
 			        if (version > 6) {
 			        	context.writeInt(object.paths.length)
-		                const paths = context.parseInt();
+		                const paths = object.paths;
 		                for(let i=0;i<object.paths.length;i++) {
 		                	context.writeString(object.paths[i])
 		                }

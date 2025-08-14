@@ -91,7 +91,7 @@ export function tryDeref(refOrObject, refMap, path = [], metaKeys = {}) {
 	const refKey = metaKeys?.refKey ?? symbols.refKey
 	const refKeyMarker = metaKeys?.refKeyMarker ?? symbols.refKeyMarker
 
-	const object = (refOrObject && refOrObject[refKeyMarker]) ? refMap[refKey] : refOrObject
+	const object = (refOrObject && refOrObject[refKeyMarker]) ? refMap[refOrObject[refKey]] : refOrObject
 
 	return path.reduce((o, k) => o ? tryDeref(o[k], refMap, [], metaKeys) : null, object)
 }

@@ -2,7 +2,7 @@
 import { join, dirname } from 'path';
 import { readdir, readFile, writeFile  } from 'fs/promises';
 import { fileURLToPath } from 'url';
-import { parserAutoDetect } from '../src/index.js';
+import { parserAutoDetect, makeSerializer, makeGrammar } from '../src/index.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -43,8 +43,15 @@ outer: for (const {dir, skip, ignore} of dirs) {
 			try {
 				const parsed = parserAutoDetect(content, false)
 				const resultKeys = new Set(Object.keys(parsed));
+			  const ser = makeSerializer(makeGrammar(parsed.version))
 
-				if(setsEqual(resultKeys, expectedKeys))  {
+				const s = ser(parsed.refMap);
+				s.context.writeVersion();
+				s.context.writeStorable(parsed.drawing);
+				const serialized = s.output.join(" ")
+				const reparsed = parserAutoDetect(serialized, false)
+
+				if(reparsed.version === parsed.version && setsEqual(resultKeys, expectedKeys) && reparsed.refMap.length === parsed.refMap.length)  {
 					process.stdout.write("."); // parsing succeeded
 				} else {
 					process.stdout.write("F"); // unexpected result

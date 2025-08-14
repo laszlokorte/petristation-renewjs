@@ -15,7 +15,7 @@ export function makeSerializer(grammar, metaKeys) {
 
 		function tryDeref(refOrObject, sourceRefMap, path = []) {
 			const selfId = refOrObject ? refOrObject[selfKey] : undefined;
-			const object = (refOrObject && refOrObject[refKey] !== undefined) ? sourceRefMap[refOrObject.ref] : selfId!==undefined ? sourceRefMap[selfId] : refOrObject
+			const object = (refOrObject && refOrObject[refKeyMarker]) ? sourceRefMap[refOrObject[refKey]] : selfId!==undefined ? sourceRefMap[selfId] : refOrObject
 
 			return path.reduce((o, k) => o ? tryDeref(o[k], sourceRefMap) : null, object)
 		}
