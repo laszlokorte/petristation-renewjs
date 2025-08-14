@@ -1,0 +1,124 @@
+11 
+    de.renew.diagram.drawing.DiagramDrawing 47 
+        CH.ifa.draw.figures.RoundRectangleFigure "attributes" "attributes" 1 "FillColor" "Color" 255 255 255 255 3 137 621 185 8 8  
+        CH.ifa.draw.figures.RoundRectangleFigure "attributes" "attributes" 1 "FillColor" "Color" 255 255 255 255 3 334 621 398 8 8  
+        de.renew.diagram.MessageConnection "no_attributes" 2 482 409 145 409 NULL 
+            de.renew.gui.AssocArrowTip 0.4 11.0 11.0 1  "de.renew.gui.AssocArrowTip" 
+            de.renew.diagram.HorizontalConnector 
+                de.renew.diagram.TaskFigure "attributes" "attributes" 1 "FillColor" "Color" 255 255 255 255 482 394 20 30   
+            de.renew.diagram.TopConnector 
+                de.renew.diagram.TaskFigure "attributes" "attributes" 1 "FillColor" "Color" 255 255 255 255 135 409 20 69    
+        de.renew.diagram.RoleDescriptorFigure "attributes" "attributes" 1 "FillColor" "Color" 255 255 255 255 97 17 93 36  
+        de.renew.diagram.DiagramTextFigure "attributes" "attributes" 4 "TextAlignment" "Int" 1 "AlternateText" "String" "~" "FrameColor" "Color" 255 199 158 255 "FillColor" "Color" 255 199 158 255 111 28 "root search" "SansSerif" 0 12 0 REF 9 
+            CH.ifa.draw.standard.OffsetLocator 0 0 
+                CH.ifa.draw.standard.RelativeLocator 0.5 0.5    
+        de.renew.diagram.RoleDescriptorFigure "attributes" "attributes" 1 "FillColor" "Color" 255 255 255 255 447 17 93 36  
+        de.renew.diagram.DiagramTextFigure "attributes" "attributes" 4 "TextAlignment" "Int" 1 "AlternateText" "String" "~" "FrameColor" "Color" 255 199 158 255 "FillColor" "Color" 255 199 158 255 459 28 "child search" "SansSerif" 0 12 0 REF 13 
+            CH.ifa.draw.standard.OffsetLocator 0 0 
+                CH.ifa.draw.standard.RelativeLocator 0.5 0.5    
+        de.renew.diagram.LifeLineConnection "attributes" "attributes" 1 "LineStyle" "String" "1 2" 2 492 53 492 237 NULL NULL "CH.ifa.draw.figures.ArrowTip" 
+            de.renew.diagram.VerticalConnector REF 13  
+            de.renew.diagram.TopConnector 
+                de.renew.diagram.TaskFigure "attributes" "attributes" 1 "FillColor" "Color" 255 255 255 255 482 237 20 75    REF 20 
+        de.renew.diagram.TaskFigure "attributes" "attributes" 1 "FillColor" "Color" 255 255 255 255 135 71 20 52  
+        de.renew.diagram.MessageConnection "no_attributes" 2 155 237 482 237 NULL 
+            de.renew.gui.AssocArrowTip 0.4 11.0 11.0 1  "de.renew.gui.AssocArrowTip" 
+            de.renew.diagram.HorizontalConnector 
+                de.renew.diagram.TaskFigure "attributes" "attributes" 1 "FillColor" "Color" 255 255 255 255 135 183 20 68   
+            de.renew.diagram.HorizontalConnector REF 20   REF 8 
+        de.renew.diagram.LifeLineConnection "attributes" "attributes" 1 "LineStyle" "String" "1 2" 2 145 251 145 409 NULL NULL "CH.ifa.draw.figures.ArrowTip" 
+            de.renew.diagram.BottomConnector REF 25  
+            de.renew.diagram.TopConnector REF 8   
+        de.renew.diagram.ActionTextFigure "attributes" "attributes" 4 "TextAlignment" "Int" 1 "AlternateText" "String" "action" "FrameColor" "Color" 0 0 0 255 "FillColor" "Color" 192 192 192 255 413 246 " store TriggerableAccessor \n in TriggerableProxy " "SansSerif" 0 12 0 REF 20 
+            CH.ifa.draw.standard.OffsetLocator 0 -13 
+                CH.ifa.draw.standard.RelativeLocator 0.5 0.5    
+        de.renew.diagram.MessageConnection "no_attributes" 2 155 478 482 478 NULL 
+            de.renew.gui.AssocArrowTip 0.4 11.0 11.0 1  "de.renew.gui.AssocArrowTip" 
+            de.renew.diagram.HorizontalConnector REF 8  
+            de.renew.diagram.HorizontalConnector 
+                de.renew.diagram.TaskFigure "attributes" "attributes" 1 "FillColor" "Color" 255 255 255 255 482 478 20 142    REF 37 
+        de.renew.diagram.DiagramTextFigure "attributes" "attributes" 4 "AlternateText" "String" "~" "FrameColor" "Color" 255 199 158 255 "TextType" "Int" 1 "FillColor" "Color" 254 254 254 255 250 471 "TriggerCollectionAccessor" "SansSerif" 0 12 0 REF 33 
+            CH.ifa.draw.standard.OffsetLocator 6 0 
+                CH.ifa.draw.standard.RelativeLocator 0.5 0.5    
+        de.renew.diagram.DiagramTextFigure "attributes" "attributes" 4 "AlternateText" "String" "~" "FrameColor" "Color" 255 199 158 255 "TextType" "Int" 1 "FillColor" "Color" 254 254 254 255 282 230 "TriggerableAccessor" "SansSerif" 0 12 0 REF 22 
+            CH.ifa.draw.standard.OffsetLocator 23 0 
+                CH.ifa.draw.standard.RelativeLocator 0.5 0.5    
+        de.renew.diagram.ActionTextFigure "attributes" "attributes" 4 "TextAlignment" "Int" 1 "AlternateText" "String" "action" "FrameColor" "Color" 0 0 0 255 "FillColor" "Color" 192 192 192 255 35 78 " start a search of a TransitionInstance " "SansSerif" 0 12 0 REF 21 
+            CH.ifa.draw.standard.OffsetLocator 0 -12 
+                CH.ifa.draw.standard.RelativeLocator 0.5 0.5    
+        de.renew.diagram.ActionTextFigure "attributes" "attributes" 4 "TextAlignment" "Int" 1 "AlternateText" "String" "action" "FrameColor" "Color" 0 0 0 255 "FillColor" "Color" 192 192 192 255 406 523 " include TriggerableProxy \n in PlaceInstance.triggerables " "SansSerif" 0 12 0 REF 37 
+            CH.ifa.draw.standard.OffsetLocator 0 -11 
+                CH.ifa.draw.standard.RelativeLocator 0.5 0.5    
+        de.renew.diagram.ActionTextFigure "attributes" "attributes" 4 "TextAlignment" "Int" 1 "AlternateText" "String" "action" "FrameColor" "Color" 0 0 0 255 "FillColor" "Color" 192 192 192 255 369 561 " create TriggerableCollectionAccessorImpl \n for PlaceInstance.triggerables " "SansSerif" 0 12 0 REF 37 
+            CH.ifa.draw.standard.OffsetLocator 0 27 
+                CH.ifa.draw.standard.RelativeLocator 0.5 0.5    
+        de.renew.diagram.ActionTextFigure "attributes" "attributes" 4 "TextAlignment" "Int" 1 "AlternateText" "String" "action" "FrameColor" "Color" 0 0 0 255 "FillColor" "Color" 192 192 192 255 116 102 " search... " "SansSerif" 0 12 0 REF 21 
+            CH.ifa.draw.standard.OffsetLocator 0 12 
+                CH.ifa.draw.standard.RelativeLocator 0.5 0.5    
+        de.renew.diagram.ActionTextFigure "attributes" "attributes" 4 "TextAlignment" "Int" 1 "AlternateText" "String" "action" "FrameColor" "Color" 0 0 0 255 "FillColor" "Color" 192 192 192 255 414 286 " search uplink providers... " "SansSerif" 0 12 0 REF 20 
+            CH.ifa.draw.standard.OffsetLocator 0 19 
+                CH.ifa.draw.standard.RelativeLocator 0.5 0.5    
+        de.renew.diagram.MessageConnection "no_attributes" 2 482 607 155 607 NULL 
+            de.renew.gui.AssocArrowTip 0.4 11.0 11.0 1  "de.renew.gui.AssocArrowTip" 
+            de.renew.diagram.HorizontalConnector REF 37  
+            de.renew.diagram.HorizontalConnector 
+                de.renew.diagram.TaskFigure "attributes" "attributes" 1 "FillColor" "Color" 255 255 255 255 135 607 20 95    REF 63 
+        de.renew.diagram.LifeLineConnection "attributes" "attributes" 1 "LineStyle" "String" "1 2" 2 145 478 145 607 NULL NULL "CH.ifa.draw.figures.ArrowTip" 
+            de.renew.diagram.BottomConnector REF 8  
+            de.renew.diagram.TopConnector REF 63   
+        de.renew.diagram.ActionTextFigure "attributes" "attributes" 4 "TextAlignment" "Int" 1 "AlternateText" "String" "action" "FrameColor" "Color" 0 0 0 255 "FillColor" "Color" 192 192 192 255 380 599 " call TriggerCollectionAccessor.include " "SansSerif" 0 12 0 REF 37 
+            CH.ifa.draw.standard.OffsetLocator 0 57 
+                CH.ifa.draw.standard.RelativeLocator 0.5 0.5    
+        de.renew.diagram.DiagramTextFigure "attributes" "attributes" 4 "AlternateText" "String" "~" "FrameColor" "Color" 255 199 158 255 "TextType" "Int" 1 "FillColor" "Color" 254 254 254 255 193 600 "TriggerableCollectionAccessor" "SansSerif" 0 12 0 REF 59 
+            CH.ifa.draw.standard.OffsetLocator -39 0 
+                CH.ifa.draw.standard.RelativeLocator 0.5 0.5    
+        de.renew.diagram.ActionTextFigure "attributes" "attributes" 4 "TextAlignment" "Int" 1 "AlternateText" "String" "action" "FrameColor" "Color" 0 0 0 255 "FillColor" "Color" 192 192 192 255 38 623 " store TriggerableCollectionAccessor \n in TriggerableCollectionProxy " "SansSerif" 0 12 0 REF 63 
+            CH.ifa.draw.standard.OffsetLocator 0 -16 
+                CH.ifa.draw.standard.RelativeLocator 0.5 0.5    
+        de.renew.diagram.ActionTextFigure "attributes" "attributes" 4 "TextAlignment" "Int" 1 "AlternateText" "String" "action" "FrameColor" "Color" 0 0 0 255 "FillColor" "Color" 192 192 192 255 42 661 " include TriggerableCollectionProxy \n in TransitionInstance.triggers " "SansSerif" 0 12 0 REF 63 
+            CH.ifa.draw.standard.OffsetLocator 0 22 
+                CH.ifa.draw.standard.RelativeLocator 0.5 0.5    
+        de.renew.diagram.MessageConnection "no_attributes" 2 155 697 482 697 NULL 
+            de.renew.gui.AssocArrowTip 0.4 11.0 11.0 1  "de.renew.gui.AssocArrowTip" 
+            de.renew.diagram.HorizontalConnector REF 63  
+            de.renew.diagram.HorizontalConnector 
+                de.renew.diagram.TaskFigure "attributes" "attributes" 1 "FillColor" "Color" 255 255 255 255 482 697 20 27    REF 83 
+        de.renew.diagram.LifeLineConnection "attributes" "attributes" 1 "LineStyle" "String" "1 2" 2 492 620 492 697 NULL NULL "CH.ifa.draw.figures.ArrowTip" 
+            de.renew.diagram.BottomConnector REF 37  
+            de.renew.diagram.TopConnector REF 83   
+        de.renew.diagram.ActionTextFigure "attributes" "attributes" 4 "TextAlignment" "Int" 1 "AlternateText" "String" "action" "FrameColor" "Color" 0 0 0 255 "FillColor" "Color" 192 192 192 255 437 703 " continue search... " "SansSerif" 0 12 0 REF 83 
+            CH.ifa.draw.standard.OffsetLocator 0 0 
+                CH.ifa.draw.standard.RelativeLocator 0.5 0.5    
+        de.renew.diagram.DiagramTextFigure "attributes" "attributes" 4 "TextAlignment" "Int" 1 "AlternateText" "String" "~" "FrameColor" "Color" 255 199 158 255 "FillColor" "Color" 255 199 158 255 174 337 "when tokens are considered to be\nbound to an arc in the child search\n(all inside TriggerableCollectionImpl.include(...))" "SansSerif" 0 12 0 REF 2 
+            CH.ifa.draw.standard.OffsetLocator -2 -174 
+                CH.ifa.draw.standard.RelativeLocator 0.5 0.5    
+        de.renew.diagram.LifeLineConnection "attributes" "attributes" 1 "LineStyle" "String" "1 2" 2 492 312 492 394 NULL NULL "CH.ifa.draw.figures.ArrowTip" 
+            de.renew.diagram.BottomConnector REF 20  
+            de.renew.diagram.TopConnector REF 6   REF 6 
+        de.renew.diagram.LifeLineConnection "attributes" "attributes" 1 "LineStyle" "String" "1 2" 2 492 424 492 478 NULL NULL "CH.ifa.draw.figures.ArrowTip" 
+            de.renew.diagram.BottomConnector REF 6  
+            de.renew.diagram.TopConnector REF 37   
+        de.renew.diagram.ActionTextFigure "attributes" "attributes" 4 "TextAlignment" "Int" 1 "AlternateText" "String" "action" "FrameColor" "Color" 0 0 0 255 "FillColor" "Color" 192 192 192 255 399 401 " call TriggerableProxy.triggers() " "SansSerif" 0 12 0 REF 6 
+            CH.ifa.draw.standard.OffsetLocator 0 -1 
+                CH.ifa.draw.standard.RelativeLocator 0.5 0.5    
+        de.renew.diagram.DiagramTextFigure "attributes" "attributes" 4 "TextAlignment" "Int" 1 "AlternateText" "String" "~" "FrameColor" "Color" 255 199 158 255 "FillColor" "Color" 255 199 158 255 212 140 "when a new remote child search\nis started by a SendChannelBinder" "SansSerif" 0 12 0 REF 1 
+            CH.ifa.draw.standard.OffsetLocator -2 -74 
+                CH.ifa.draw.standard.RelativeLocator 0.5 0.5    
+        de.renew.diagram.LifeLineConnection "attributes" "attributes" 1 "LineStyle" "String" "1 2" 2 145 53 145 71 NULL NULL "CH.ifa.draw.figures.ArrowTip" 
+            de.renew.diagram.VerticalConnector REF 9  
+            de.renew.diagram.TopConnector REF 21   
+        de.renew.diagram.LifeLineConnection "attributes" "attributes" 1 "LineStyle" "String" "1 2" 2 145 123 145 183 NULL NULL "CH.ifa.draw.figures.ArrowTip" 
+            de.renew.diagram.BottomConnector REF 21  
+            de.renew.diagram.TopConnector REF 25   REF 25 
+        de.renew.diagram.ActionTextFigure "attributes" "attributes" 4 "TextAlignment" "Int" 1 "AlternateText" "String" "action" "FrameColor" "Color" 0 0 0 255 "FillColor" "Color" 192 192 192 255 50 190 " create TriggerableAccessorImpl \n for the TranistionInstance " "SansSerif" 0 12 0 REF 25 
+            CH.ifa.draw.standard.OffsetLocator 0 -12 
+                CH.ifa.draw.standard.RelativeLocator 0.5 0.5    
+        de.renew.diagram.ActionTextFigure "attributes" "attributes" 6 "TextAlignment" "Int" 1 "AlternateText" "String" "action" "IsHidden" "Boolean" "FALSE" "FrameColor" "Color" 0 0 0 255 "HiddenText" "String" "call DistributeNetInstance.search" "FillColor" "Color" 192 192 192 255 47 229 " call DistributeNetInstance.search " "SansSerif" 0 12 0 REF 25 
+            CH.ifa.draw.standard.OffsetLocator 0 19 
+                CH.ifa.draw.standard.RelativeLocator 0.5 0.5    
+        de.renew.diagram.ActionTextFigure "attributes" "attributes" 4 "TextAlignment" "Int" 1 "AlternateText" "String" "action" "FrameColor" "Color" 0 0 0 255 "FillColor" "Color" 192 192 192 255 398 485 " store TriggerCollectionAccessor \n in TriggerCollectionProxy " "SansSerif" 0 12 0 REF 37 
+            CH.ifa.draw.standard.OffsetLocator 0 -49 
+                CH.ifa.draw.standard.RelativeLocator 0.5 0.5    
+        de.renew.diagram.ActionTextFigure "attributes" "attributes" 5 "TextAlignment" "Int" 1 "AlternateText" "String" "action" "FrameColor" "Color" 0 0 0 255 "TextType" "Int" 1 "FillColor" "Color" 192 192 192 255 35 421 " create TriggerCollectionAccessorImpl \n for the TriggerCollection \n of primary triggerable " "SansSerif" 0 12 0 REF 8 
+            CH.ifa.draw.standard.OffsetLocator 0 0 
+                CH.ifa.draw.standard.RelativeLocator 0.5 0.5     0 23 1173 754 

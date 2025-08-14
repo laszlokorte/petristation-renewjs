@@ -1,0 +1,137 @@
+11 
+    de.renew.diagram.drawing.DiagramDrawing 52 
+        de.renew.diagram.RoleDescriptorFigure "attributes" "attributes" 1 "FillColor" "Color" 255 255 255 255 162 152 107 36  
+        de.renew.diagram.RoleDescriptorFigure "attributes" "attributes" 1 "FillColor" "Color" 255 255 255 255 345 150 88 36  
+        de.renew.diagram.RoleDescriptorFigure "attributes" "attributes" 1 "FillColor" "Color" 255 255 255 255 23 148 99 36  
+        de.renew.diagram.RoleDescriptorFigure "attributes" "attributes" 1 "FillColor" "Color" 255 255 255 255 507 146 103 36  
+        de.renew.diagram.RoleDescriptorFigure "attributes" "attributes" 1 "FillColor" "Color" 255 255 255 255 637 143 106 36  
+        de.renew.diagram.DiagramTextFigure "attributes" "attributes" 2 "FrameColor" "Color" 255 199 158 255 "FillColor" "Color" 255 199 158 255 173 154 "SimulationMenu\nCreator" "SansSerif" 0 12 0 REF 1 
+            CH.ifa.draw.standard.OffsetLocator 2 -1 
+                CH.ifa.draw.standard.RelativeLocator 0.5 0.5    
+        de.renew.diagram.LifeLineConnection "attributes" "attributes" 1 "LineStyle" "String" "1 2" 2 179 188 179 267 NULL NULL "CH.ifa.draw.figures.ArrowTip" 
+            de.renew.diagram.VerticalConnector REF 1  
+            de.renew.diagram.TopConnector 
+                de.renew.diagram.TaskFigure "attributes" "attributes" 1 "FillColor" "Color" 255 255 255 255 169 267 20 20    REF 12 
+        de.renew.diagram.MessageConnection "no_attributes" 2 253 291 392 291 NULL 
+            de.renew.gui.AssocArrowTip 0.4 11.0 11.0 1  "de.renew.gui.AssocArrowTip" 
+            de.renew.diagram.HorizontalConnector 
+                de.renew.diagram.TaskFigure "attributes" "attributes" 1 "FillColor" "Color" 255 255 255 255 233 276 20 123   
+            de.renew.diagram.HorizontalConnector 
+                de.renew.diagram.TaskFigure "attributes" "attributes" 1 "FillColor" "Color" 255 255 255 255 392 291 20 68    REF 18 
+        de.renew.diagram.LifeLineConnection "attributes" "attributes" 1 "LineStyle" "String" "1 2" 2 402 186 402 291 NULL NULL "CH.ifa.draw.figures.ArrowTip" 
+            de.renew.diagram.VerticalConnector REF 2  
+            de.renew.diagram.TopConnector REF 18   
+        de.renew.diagram.MessageConnection "no_attributes" 2 189 276 233 276 NULL 
+            de.renew.gui.AssocArrowTip 0.4 11.0 11.0 1  "de.renew.gui.AssocArrowTip" 
+            de.renew.diagram.HorizontalConnector REF 12  
+            de.renew.diagram.HorizontalConnector REF 16   REF 16 
+        de.renew.diagram.LifeLineConnection "attributes" "attributes" 1 "LineStyle" "String" "1 2" 2 243 188 243 276 NULL NULL "CH.ifa.draw.figures.ArrowTip" 
+            de.renew.diagram.VerticalConnector REF 1  
+            de.renew.diagram.TopConnector REF 16   
+        de.renew.diagram.DiagramTextFigure "attributes" "attributes" 3 "FrameColor" "Color" 255 199 158 255 "TextType" "Int" 1 "FillColor" "Color" 254 254 254 255 258 266 "initSimulation(netName)" "SansSerif" 0 12 0 REF 13 
+            CH.ifa.draw.standard.OffsetLocator 3 -18 
+                CH.ifa.draw.standard.RelativeLocator 0.5 0.5    
+        de.renew.diagram.DiagramTextFigure "attributes" "attributes" 3 "FrameColor" "Color" 255 199 158 255 "TextType" "Int" 1 "FillColor" "Color" 254 254 254 255 158 244 "initSimulation()" "SansSerif" 0 12 0 REF 22 
+            CH.ifa.draw.standard.OffsetLocator -12 -25 
+                CH.ifa.draw.standard.RelativeLocator 0.5 0.5    
+        de.renew.diagram.DiagramTextFigure "attributes" "attributes" 2 "FrameColor" "Color" 255 199 158 255 "FillColor" "Color" 255 199 158 255 350 161 "CPNSimulation" "SansSerif" 0 12 0 REF 2 
+            CH.ifa.draw.standard.OffsetLocator 2 0 
+                CH.ifa.draw.standard.RelativeLocator 0.5 0.5    
+        de.renew.diagram.DiagramTextFigure "attributes" "attributes" 2 "FrameColor" "Color" 255 199 158 255 "FillColor" "Color" 255 199 158 255 29 159 "CPNApplication" "SansSerif" 0 12 0 REF 3 
+            CH.ifa.draw.standard.OffsetLocator 1 0 
+                CH.ifa.draw.standard.RelativeLocator 0.5 0.5    
+        de.renew.diagram.MessageConnection "no_attributes" 2 233 361 92 361 NULL 
+            de.renew.gui.AssocArrowTip 0.4 11.0 11.0 1  "de.renew.gui.AssocArrowTip" 
+            de.renew.diagram.HorizontalConnector REF 16  
+            de.renew.diagram.HorizontalConnector 
+                de.renew.diagram.TaskFigure "attributes" "attributes" 1 "FillColor" "Color" 255 255 255 255 72 361 20 20    REF 45 
+        de.renew.diagram.LifeLineConnection "attributes" "attributes" 1 "LineStyle" "String" "1 2" 2 82 184 82 361 NULL NULL "CH.ifa.draw.figures.ArrowTip" 
+            de.renew.diagram.VerticalConnector REF 3  
+            de.renew.diagram.TopConnector REF 45   
+        de.renew.diagram.MessageConnection "attributes" "attributes" 1 "LineStyle" "String" "1 2" 3 392 351 323 351 253 351 NULL 
+            de.renew.gui.AssocArrowTip 0.4 11.0 11.0 1  "de.renew.gui.AssocArrowTip" 
+            de.renew.diagram.HorizontalConnector REF 18  
+            de.renew.diagram.HorizontalConnector REF 16   
+        de.renew.diagram.DiagramTextFigure "attributes" "attributes" 3 "FrameColor" "Color" 255 199 158 255 "TextType" "Int" 1 "FillColor" "Color" 254 254 254 255 94 320 "openInstanceDrawing(\nprimaryInstance)" "SansSerif" 0 12 0 REF 41 
+            CH.ifa.draw.standard.OffsetLocator -5 -26 
+                CH.ifa.draw.standard.RelativeLocator 0.5 0.5    
+        de.renew.diagram.MessageConnection "no_attributes" 2 412 344 546 344 NULL 
+            de.renew.gui.AssocArrowTip 0.4 11.0 11.0 1  "de.renew.gui.AssocArrowTip" 
+            de.renew.diagram.HorizontalConnector REF 18  
+            de.renew.diagram.HorizontalConnector 
+                de.renew.diagram.TaskFigure "attributes" "attributes" 1 "FillColor" "Color" 255 255 255 255 546 344 20 75    REF 60 
+        de.renew.diagram.LifeLineConnection "attributes" "attributes" 1 "LineStyle" "String" "1 2" 2 556 182 556 344 NULL NULL "CH.ifa.draw.figures.ArrowTip" 
+            de.renew.diagram.VerticalConnector REF 4  
+            de.renew.diagram.TopConnector REF 60   
+        de.renew.diagram.DiagramTextFigure "attributes" "attributes" 2 "FrameColor" "Color" 255 199 158 255 "FillColor" "Color" 255 199 158 255 516 156 "SimulatorPlugin" "SansSerif" 0 12 0 REF 4 
+            CH.ifa.draw.standard.OffsetLocator 1 -1 
+                CH.ifa.draw.standard.RelativeLocator 0.5 0.5    
+        de.renew.diagram.MessageConnection "no_attributes" 2 566 350 678 350 NULL 
+            de.renew.gui.AssocArrowTip 0.4 11.0 11.0 1  "de.renew.gui.AssocArrowTip" 
+            de.renew.diagram.HorizontalConnector REF 60  
+            de.renew.diagram.HorizontalConnector 
+                de.renew.diagram.TaskFigure "attributes" "attributes" 1 "FillColor" "Color" 255 255 255 255 678 350 20 20    REF 71 
+        de.renew.diagram.LifeLineConnection "attributes" "attributes" 1 "LineStyle" "String" "1 2" 2 688 179 688 350 NULL NULL "CH.ifa.draw.figures.ArrowTip" 
+            de.renew.diagram.VerticalConnector REF 5  
+            de.renew.diagram.TopConnector REF 71   
+        de.renew.diagram.DiagramTextFigure "attributes" "attributes" 3 "FrameColor" "Color" 255 199 158 255 "TextType" "Int" 1 "FillColor" "Color" 254 254 254 255 594 332 "compile() " "SansSerif" 0 12 0 REF 67 
+            CH.ifa.draw.standard.OffsetLocator 0 -11 
+                CH.ifa.draw.standard.RelativeLocator 0.5 0.5    
+        de.renew.diagram.DiagramTextFigure "attributes" "attributes" 2 "FrameColor" "Color" 255 199 158 255 "FillColor" "Color" 255 199 158 255 639 155 "ShadowNetSystem" "SansSerif" 0 12 0 REF 5 
+            CH.ifa.draw.standard.OffsetLocator 1 1 
+                CH.ifa.draw.standard.RelativeLocator 0.5 0.5    
+        de.renew.diagram.RoleDescriptorFigure "attributes" "attributes" 1 "FillColor" "Color" 255 255 255 255 759 147 128 36  
+        de.renew.diagram.MessageConnection "attributes" "attributes" 1 "LineStyle" "String" "1 2" 3 678 368 645 368 566 368 NULL 
+            de.renew.gui.AssocArrowTip 0.4 11.0 11.0 1  "de.renew.gui.AssocArrowTip" 
+            de.renew.diagram.HorizontalConnector REF 71  
+            de.renew.diagram.HorizontalConnector REF 60   
+        de.renew.diagram.DiagramTextFigure "attributes" "attributes" 3 "FrameColor" "Color" 255 199 158 255 "TextType" "Int" 1 "FillColor" "Color" 254 254 254 255 284 335 "primaryInstance" "SansSerif" 0 12 0 REF 49 
+            CH.ifa.draw.standard.OffsetLocator 8 -9 
+                CH.ifa.draw.standard.RelativeLocator 0.5 0.5    
+        de.renew.diagram.DiagramTextFigure "attributes" "attributes" 3 "FrameColor" "Color" 255 199 158 255 "TextType" "Int" 1 "FillColor" "Color" 254 254 254 255 596 353 "lookup" "SansSerif" 0 12 0 REF 82 
+            CH.ifa.draw.standard.OffsetLocator -7 -8 
+                CH.ifa.draw.standard.RelativeLocator 0.5 0.5    
+        de.renew.diagram.MessageConnection "no_attributes" 2 566 392 776 392 NULL 
+            de.renew.gui.AssocArrowTip 0.4 11.0 11.0 1  "de.renew.gui.AssocArrowTip" 
+            de.renew.diagram.HorizontalConnector REF 60  
+            de.renew.diagram.HorizontalConnector 
+                de.renew.diagram.TaskFigure "attributes" "attributes" 1 "FillColor" "Color" 255 255 255 255 776 392 20 24    REF 96 
+        de.renew.diagram.LifeLineConnection "attributes" "attributes" 1 "LineStyle" "String" "1 2" 2 786 183 786 392 NULL NULL "CH.ifa.draw.figures.ArrowTip" 
+            de.renew.diagram.VerticalConnector REF 81  
+            de.renew.diagram.TopConnector REF 96   
+        de.renew.diagram.DiagramTextFigure "attributes" "attributes" 3 "TextAlignment" "Int" 1 "FrameColor" "Color" 255 199 158 255 "FillColor" "Color" 255 199 158 255 767 158 "BreakpointManager" "SansSerif" 0 12 0 REF 81 
+            CH.ifa.draw.standard.OffsetLocator 0 0 
+                CH.ifa.draw.standard.RelativeLocator 0.5 0.5    
+        de.renew.diagram.DiagramTextFigure "attributes" "attributes" 2 "FrameColor" "Color" 255 199 158 255 "FillColor" "Color" 255 199 158 255 748 127 "<<SimulatorExtension>>\n" "SansSerif" 0 12 0 REF 81 
+            CH.ifa.draw.standard.OffsetLocator -1 -23 
+                CH.ifa.draw.standard.RelativeLocator 0.5 0.5    
+        de.renew.diagram.MessageConnection "no_attributes" 2 796 415 848 415 NULL 
+            de.renew.gui.AssocArrowTip 0.4 11.0 11.0 1  "de.renew.gui.AssocArrowTip" 
+            de.renew.diagram.HorizontalConnector REF 96  
+            de.renew.diagram.HorizontalConnector 
+                de.renew.diagram.TaskFigure "attributes" "attributes" 1 "FillColor" "Color" 255 255 255 255 848 415 20 35    REF 110 
+        de.renew.diagram.LifeLineConnection "attributes" "attributes" 1 "LineStyle" "String" "1 2" 2 858 183 858 415 NULL NULL "CH.ifa.draw.figures.ArrowTip" 
+            de.renew.diagram.VerticalConnector REF 81  
+            de.renew.diagram.TopConnector REF 110   
+        CH.ifa.draw.figures.RoundRectangleFigure "attributes" "attributes" 1 "FillColor" "Color" 204 204 255 255 25 40 664 66 8 8  
+        de.renew.diagram.ActionTextFigure "attributes" "attributes" 4 "TextAlignment" "Int" 1 "FrameColor" "Color" 0 0 0 255 "TextType" "Int" 1 "FillColor" "Color" 192 192 192 255 399 301 "buiildAllShadows()" "SansSerif" 0 12 0 REF 18 
+            CH.ifa.draw.standard.OffsetLocator 49 -17 
+                CH.ifa.draw.standard.RelativeLocator 0.5 0.5    
+        de.renew.diagram.DiagramTextFigure "attributes" "attributes" 3 "FrameColor" "Color" 255 199 158 255 "TextType" "Int" 1 "FillColor" "Color" 254 254 254 255 422 326 "insertNets(netSystem)" "SansSerif" 0 12 0 REF 56 
+            CH.ifa.draw.standard.OffsetLocator 5 -11 
+                CH.ifa.draw.standard.RelativeLocator 0.5 0.5    
+        de.renew.diagram.DiagramTextFigure "attributes" "attributes" 3 "FrameColor" "Color" 255 199 158 255 "TextType" "Int" 1 "FillColor" "Color" 254 254 254 255 620 376 "netsCompiled(lookup)" "SansSerif" 0 12 0 REF 92 
+            CH.ifa.draw.standard.OffsetLocator 12 -9 
+                CH.ifa.draw.standard.RelativeLocator 0.5 0.5    
+        de.renew.diagram.DiagramTextFigure "attributes" "attributes" 3 "FrameColor" "Color" 255 199 158 255 "TextType" "Int" 1 "FillColor" "Color" 254 254 254 255 704 423 "addPresetBreakpoints()" "SansSerif" 0 12 0 REF 106 
+            CH.ifa.draw.standard.OffsetLocator -51 15 
+                CH.ifa.draw.standard.RelativeLocator 0.5 0.5    
+        de.renew.diagram.DiagramTextFigure "attributes" "attributes" 3 "FrameColor" "Color" 255 199 158 255 "TextType" "Int" 1 "FillColor" "Color" 254 254 254 255 574 394 "*" "SansSerif" 0 24 0 REF 92 
+            CH.ifa.draw.standard.OffsetLocator -91 17 
+                CH.ifa.draw.standard.RelativeLocator 0.5 0.5    
+        CH.ifa.draw.figures.TextFigure "attributes" "attributes" 3 "TextAlignment" "Int" 1 "FrameColor" "Color" 255 199 158 255 "FillColor" "Color" 255 199 158 255 44 46 "Starting a Simulation with Ctrl-R (Menu Command) method calls (selected)" "SansSerif" 0 16 0 REF 114 
+            CH.ifa.draw.standard.OffsetLocator -22 -17 
+                CH.ifa.draw.standard.RelativeLocator 0.5 0.5    
+        CH.ifa.draw.figures.TextFigure "attributes" "attributes" 3 "FrameColor" "Color" 255 199 158 255 "TextAlignment" "Int" 0 "FillColor" "Color" 255 199 158 255 39 69 "@autor cabac, wester\n@date 2009-03-05" "SansSerif" 0 12 0 REF 114 
+            CH.ifa.draw.standard.OffsetLocator -256 11 
+                CH.ifa.draw.standard.RelativeLocator 0.5 0.5     124 160 1042 625 

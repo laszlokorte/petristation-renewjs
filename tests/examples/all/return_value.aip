@@ -1,0 +1,69 @@
+11 
+    de.renew.diagram.drawing.DiagramDrawing 28 
+        CH.ifa.draw.figures.RoundRectangleFigure "attributes" "attributes" 1 "FillColor" "Color" 255 199 158 255 233 6 666 67 8 8  
+        de.renew.diagram.MessageConnection "no_attributes" 2 339 181 115 181 NULL 
+            de.renew.gui.AssocArrowTip 0.4 11.0 11.0 1  "de.renew.gui.AssocArrowTip" 
+            de.renew.diagram.HorizontalConnector 
+                de.renew.diagram.TaskFigure "attributes" "attributes" 1 "FillColor" "Color" 255 255 255 255 339 169 20 23   
+            de.renew.diagram.HorizontalConnector 
+                de.renew.diagram.TaskFigure "attributes" "attributes" 1 "FillColor" "Color" 255 255 255 255 95 181 20 68    
+        de.renew.diagram.RoleDescriptorFigure "attributes" "attributes" 1 "FillColor" "Color" 255 255 255 255 15 23 175 36  
+        de.renew.diagram.DiagramTextFigure "attributes" "attributes" 4 "TextAlignment" "Int" 1 "AlternateText" "String" "~" "FrameColor" "Color" 255 199 158 255 "FillColor" "Color" 255 199 158 255 25 34 "RemoteSuccessNotifierImpl" "SansSerif" 0 12 0 REF 8 
+            CH.ifa.draw.standard.OffsetLocator 0 0 
+                CH.ifa.draw.standard.RelativeLocator 0.5 0.5    REF 7 
+        de.renew.diagram.LifeLineConnection "attributes" "attributes" 1 "LineStyle" "String" "1 2" 2 105 59 105 181 NULL NULL "CH.ifa.draw.figures.ArrowTip" 
+            de.renew.diagram.VerticalConnector REF 8  
+            de.renew.diagram.TopConnector REF 7   
+        de.renew.diagram.ActionTextFigure "attributes" "attributes" 5 "TextAlignment" "Int" 1 "AlternateText" "String" "action" "FrameColor" "Color" 0 0 0 255 "TextType" "Int" 1 "FillColor" "Color" 192 192 192 255 13 190 " if return value is expected: \n unify return variable with value " "SansSerif" 0 12 0 REF 7 
+            CH.ifa.draw.standard.OffsetLocator 0 -10 
+                CH.ifa.draw.standard.RelativeLocator 0.5 0.5    
+        de.renew.diagram.ActionTextFigure "attributes" "attributes" 5 "TextAlignment" "Int" 1 "AlternateText" "String" "action" "FrameColor" "Color" 0 0 0 255 "TextType" "Int" 1 "FillColor" "Color" 192 192 192 255 42 228 " continue searching... " "SansSerif" 0 12 0 REF 7 
+            CH.ifa.draw.standard.OffsetLocator 0 20 
+                CH.ifa.draw.standard.RelativeLocator 0.5 0.5    
+        de.renew.diagram.RoleDescriptorFigure "attributes" "attributes" 1 "FillColor" "Color" 255 255 255 255 255 23 188 36  
+        de.renew.diagram.DiagramTextFigure "attributes" "attributes" 4 "TextAlignment" "Int" 1 "AlternateText" "String" "~" "FrameColor" "Color" 255 199 158 255 "FillColor" "Color" 255 199 158 255 261 34 "RemoteSuccessNotifierAdapter" "SansSerif" 0 12 0 REF 21 
+            CH.ifa.draw.standard.OffsetLocator 0 0 
+                CH.ifa.draw.standard.RelativeLocator 0.5 0.5    REF 5 
+        de.renew.diagram.LifeLineConnection "attributes" "attributes" 1 "LineStyle" "String" "1 2" 2 349 59 349 169 NULL NULL "CH.ifa.draw.figures.ArrowTip" 
+            de.renew.diagram.VerticalConnector REF 21  
+            de.renew.diagram.TopConnector REF 5   
+        de.renew.diagram.ActionTextFigure "attributes" "attributes" 5 "TextAlignment" "Int" 1 "AlternateText" "String" "action" "FrameColor" "Color" 0 0 0 255 "TextType" "Int" 1 "FillColor" "Color" 192 192 192 255 215 173 " RemoteSuccessNotifier.reportSuccess(Object) " "SansSerif" 0 12 0 REF 5 
+            CH.ifa.draw.standard.OffsetLocator 0 0 
+                CH.ifa.draw.standard.RelativeLocator 0.5 0.5    
+        de.renew.diagram.RoleDescriptorFigure "attributes" "attributes" 1 "FillColor" "Color" 255 255 255 255 516 23 234 36  
+        de.renew.diagram.DiagramTextFigure "attributes" "attributes" 4 "TextAlignment" "Int" 1 "AlternateText" "String" "~" "FrameColor" "Color" 255 199 158 255 "FillColor" "Color" 255 199 158 255 522 26 "anonymous Finder\nin SearcherAccessorImpl.searchCall(...)" "SansSerif" 0 12 0 REF 31 
+            CH.ifa.draw.standard.OffsetLocator 0 0 
+                CH.ifa.draw.standard.RelativeLocator 0.5 0.5    
+        de.renew.diagram.RoleDescriptorFigure "attributes" "attributes" 1 "FillColor" "Color" 255 255 255 255 809 23 72 36  
+        de.renew.diagram.DiagramTextFigure "attributes" "attributes" 4 "TextAlignment" "Int" 1 "AlternateText" "String" "~" "FrameColor" "Color" 255 199 158 255 "FillColor" "Color" 255 199 158 255 820 34 "Searcher" "SansSerif" 0 12 0 REF 35 
+            CH.ifa.draw.standard.OffsetLocator 0 0 
+                CH.ifa.draw.standard.RelativeLocator 0.5 0.5    
+        de.renew.diagram.TaskFigure "attributes" "attributes" 1 "FillColor" "Color" 255 255 255 255 623 157 20 23  
+        de.renew.diagram.LifeLineConnection "attributes" "attributes" 1 "LineStyle" "String" "1 2" 2 633 59 633 157 NULL NULL "CH.ifa.draw.figures.ArrowTip" 
+            de.renew.diagram.VerticalConnector REF 31  
+            de.renew.diagram.TopConnector REF 39   
+        de.renew.diagram.MessageConnection "no_attributes" 2 623 169 359 169 NULL 
+            de.renew.gui.AssocArrowTip 0.4 11.0 11.0 1  "de.renew.gui.AssocArrowTip" 
+            de.renew.diagram.HorizontalConnector REF 39  
+            de.renew.diagram.HorizontalConnector REF 5   
+        de.renew.diagram.TaskFigure "attributes" "attributes" 1 "FillColor" "Color" 255 255 255 255 835 145 20 23  
+        de.renew.diagram.LifeLineConnection "attributes" "attributes" 1 "LineStyle" "String" "1 2" 2 845 121 845 145 NULL NULL "CH.ifa.draw.figures.ArrowTip" 
+            de.renew.diagram.BottomConnector 
+                de.renew.diagram.TaskFigure "attributes" "attributes" 1 "FillColor" "Color" 255 255 255 255 835 98 20 23   
+            de.renew.diagram.TopConnector REF 47   
+        de.renew.diagram.MessageConnection "no_attributes" 2 835 157 643 157 NULL 
+            de.renew.gui.AssocArrowTip 0.4 11.0 11.0 1  "de.renew.gui.AssocArrowTip" 
+            de.renew.diagram.HorizontalConnector REF 47  
+            de.renew.diagram.HorizontalConnector REF 39   
+        de.renew.diagram.ActionTextFigure "attributes" "attributes" 5 "TextAlignment" "Int" 1 "AlternateText" "String" "action" "FrameColor" "Color" 0 0 0 255 "TextType" "Int" 1 "FillColor" "Color" 192 192 192 255 776 149 " Finder.found(Searcher) " "SansSerif" 0 12 0 REF 47 
+            CH.ifa.draw.standard.OffsetLocator 0 0 
+                CH.ifa.draw.standard.RelativeLocator 0.5 0.5    REF 50 
+        de.renew.diagram.LifeLineConnection "attributes" "attributes" 1 "LineStyle" "String" "1 2" 2 845 59 845 98 NULL NULL "CH.ifa.draw.figures.ArrowTip" 
+            de.renew.diagram.VerticalConnector REF 35  
+            de.renew.diagram.TopConnector REF 50   
+        de.renew.diagram.ActionTextFigure "attributes" "attributes" 5 "TextAlignment" "Int" 1 "AlternateText" "String" "action" "FrameColor" "Color" 0 0 0 255 "TextType" "Int" 1 "FillColor" "Color" 192 192 192 255 808 102 " searching... " "SansSerif" 0 12 0 REF 50 
+            CH.ifa.draw.standard.OffsetLocator 0 0 
+                CH.ifa.draw.standard.RelativeLocator 0.5 0.5    
+        de.renew.diagram.ActionTextFigure "attributes" "attributes" 5 "TextAlignment" "Int" 1 "AlternateText" "String" "action" "FrameColor" "Color" 0 0 0 255 "TextType" "Int" 1 "FillColor" "Color" 192 192 192 255 495 161 " RemoteSuccessNotifierAdapter.reportSuccess() " "SansSerif" 0 12 0 REF 39 
+            CH.ifa.draw.standard.OffsetLocator 0 0 
+                CH.ifa.draw.standard.RelativeLocator 0.5 0.5     0 220 1163 576 

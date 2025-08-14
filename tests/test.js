@@ -1,4 +1,12 @@
 
+import { join, dirname } from 'path';
+import { readdir, readFile, writeFile  } from 'fs/promises';
+import { fileURLToPath } from 'url';
+import { parserAutoDetect } from '../src/index.js';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
 const dirs = [
 	{dir: 'all', skip: {
 		"CSexample.rnw": "file cut at end",
@@ -7,114 +15,54 @@ const dirs = [
 		"mutex (2).rnw": "de.uni_hamburg.tgi.renew.marianets.QueryFigure?",
 		//"service.rnw": "de.renew.sdnet.gui.SDNDrawing?",
 		//"FSsample.rnw": "fs.TypeFigure?",
+		"siedler2_spielrunde (2).aip": "invalid file?",
 	}, ignore: false},
 	{dir: 'aips', skip: {
+		"siedler2_spielrunde (2).aip": "invalid file?",
 	}, ignore: false}
 ]
 
+outer:
 for (const {dir, skip, ignore} of dirs) {
 	if(ignore) continue;
 
-	for await (const dirEntry of Deno.readDir(join('.', dir))) {
-		if (dirEntry.isFile) {
+	const entries = await readdir(join(__dirname, 'examples', dir), { withFileTypes: true });
+	inner:
+	for (const dirEntry of entries) {
+		if (dirEntry.isFile()) {
+
 			if(skip[dirEntry.name]) {
-				console.log("Skipping file " + dirEntry.name + ", because: " + skip[dirEntry.name]);
+				process.stdout.write("S");
 				continue;
 			}
-			const testFile =  join('.', dir, dirEntry.name)
-			
-			const text = await Deno.readTextFile(testFile);
+			const testFile =  join(__dirname, 'examples', dir, dirEntry.name)
+			const content = await readFile(testFile, 'utf-8');
 
+			try {
+				const parsed = parserAutoDetect(content, false)
+				const resultKeys = new Set(Object.keys(parsed));
+				const expectedKeys = new Set([ 'version', 'doctype', 'drawing', 'refMap' ]);
 
-			let prevIndex = 0
-			for(let tok of renewTokens(text)) {
-				prevIndex = tok.end
-			}
-
-			if(prevIndex !== text.length) {
-				console.error("failed:" + testFile)
-				console.error(text.slice(prevIndex, prevIndex+100))
-				break;
-			}
-
-			const tokenStream = renewTokens(text);
-			const version = reader.readAny(["int","className"], false);
-			if(version.type == 'int') {
-				try {
-					const parser = makeParser(reader, makeSyntax(version.value))
-
-					const p = parser(tokenStream)
-					const fig = p.parseStorable();
-					const fileContent = {version: version.value, content: fig}
-					const jsonFile =  join('.', "json_out", dirEntry.name + '.json')
-
-					try {
-						const existingJson = await Deno.readTextFile(jsonFile);
-						const rereadJson = retrocycle(JSON.parse(existingJson))
-
-						if(!isDeepEqual(rereadJson, fileContent)) {
-							throw new Error("Reread of JSON failed");
-						} else {
-							console.log("ok")
-						}
-					} catch(err) {
-						if (!(err instanceof Deno.errors.NotFound)) {
-						    throw err;
-						}
-
-						const decycled = decycle(fileContent)
-						const decycledJson = JSON.stringify(decycled, null, 2)
-
-						await Deno.writeTextFile(jsonFile, decycledJson);
-					}
-
-				} catch(e) {
-					console.error(testFile)
-					console.error(version.value)
-					console.error(e)
-					throw e
+				if(setsEqual(resultKeys, expectedKeys))  {
+					process.stdout.write(".");
+				} else {
+					process.stdout.write("E");
 				}
-			} else {
-				try {
-					const parser = makeParser(reader, makeSyntax(-1))
-
-					const p = parser(tokenStream)
-					const fig = p.parseImplicitStorable(version.value);
-
-					const fileContent = {version: null, content: fig}
-					const jsonFile =  join('.', "json_out", dirEntry.name + '.json')
-
-					try {
-						const existingJson = await Deno.readTextFile(jsonFile);
-						const rereadJson = retrocycle(JSON.parse(existingJson))
-
-						if(!isDeepEqual(rereadJson, fileContent)) {
-							throw new Error("Reread of JSON failed");
-						} else {
-							console.log("ok")
-						}
-					} catch(err) {
-						if (!(err instanceof Deno.errors.NotFound)) {
-						    throw err;
-						}
-
-						const decycled = decycle(fileContent)
-						const decycledJson = JSON.stringify(decycled, null, 2)
-
-						await Deno.writeTextFile(jsonFile, decycledJson);
-					}
-				} catch(e) {
-					console.error(testFile)
-					console.error("no version")
-					console.error(e)
-					throw e
-
-				}
+			} catch(e) {
+				process.stdout.write("E"+"\n");
+				process.stderr.write(e.toString()+"\n");
+				process.stderr.write(testFile+"\n");
 			}
-
-			//break;
-			// console.log(p.refMap)
 		}
 	}
 
+}
+
+
+function setsEqual(a, b) {
+  if (a.size !== b.size) return false;
+  for (const val of a) {
+    if (!b.has(val)) return false;
+  }
+  return true;
 }
