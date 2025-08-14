@@ -1,6 +1,11 @@
-import {kindKey, refKey, selfKey} from './symbols.js'
+import symbols from './symbols.js'
 
 export function makeParser(reader, grammar, autoDeref = true, metaKeys = {}) {
+	const kindKey = metaKeys?.kindKey ?? symbols.kindKey
+	const refKey = metaKeys?.refKey ?? symbols.refKey
+	const selfKey = metaKeys?.selfKey ?? symbols.selfKey
+	const refKeyMarker = metaKeys?.refKeyMarker ?? symbols.refKeyMarker
+
 	return function parser(inputString) {
 		const r = reader(inputString)
 		const refMap = [];
@@ -45,6 +50,9 @@ export function makeParser(reader, grammar, autoDeref = true, metaKeys = {}) {
 			get kindKey() {
 				return kindKey;
 			},
+			get refKeyMarker() {
+				return refKeyMarker;
+			},
 			parseStorable(ofInterface = null, allowNull = true, forceDeref = null)  {
 				const t = r.readAny(['nil','ref','className'])
 
@@ -64,11 +72,7 @@ export function makeParser(reader, grammar, autoDeref = true, metaKeys = {}) {
 					if(autoDeref || forceDeref === true) {
 						return referencedObject
 					} else {
-						const ref = {[refKey]: true, ref: t.value}
-						if(metaKeys.ref) {
-							ref[metaKeys.ref] = t.value
-						}
-
+						const ref = {[refKeyMarker]: true, [refKey]: t.value}
 						return ref
 					}
 
@@ -83,23 +87,13 @@ export function makeParser(reader, grammar, autoDeref = true, metaKeys = {}) {
 						[kindKey]: className,
 					};
 
-					if(metaKeys.kind) {
-						newObject[metaKeys.kind] = className
-					}
-
 					newObject[selfKey] = refMap.length
-					if(metaKeys.self) {
-						newObject[metaKeys.self] = refMap.length
-					}
 					refMap.push(newObject)
 
 					parseInto(newObject, className);
 
 					if(forceDeref !== true) {
-						const ref = {[refKey]: true, ref: newObject[metaKeys.self]}
-						if(metaKeys.ref) {
-							ref[metaKeys.ref] = newObject[metaKeys.self]
-						}
+						const ref = {[refKeyMarker]: true, [refKey]: newObject[selfKey]}
 
 						return ref
 					}
@@ -112,15 +106,8 @@ export function makeParser(reader, grammar, autoDeref = true, metaKeys = {}) {
 					[kindKey]: ofType,
 				};
 
-				if(metaKeys.kind) {
-					newObject[metaKeys.kind] = ofType
-				}
-
 				if(storeRef) {
 					newObject[selfKey] = refMap.length
-					if(metaKeys.self) {
-						newObject[metaKeys.self] = refMap.length
-					}
 					refMap.push(newObject)
 				}
 

@@ -1,6 +1,11 @@
-import {kindKey, refKey, selfKey} from './symbols.js'
+import symbols from './symbols.js'
 
 export function makeSerializer(grammar, metaKeys) {
+	const kindKey = metaKeys?.kindKey ?? symbols.kindKey
+	const refKey = metaKeys?.refKey ?? symbols.refKey
+	const selfKey = metaKeys?.selfKey ?? symbols.selfKey
+	const refKeyMarker = metaKeys?.refKeyMarker ?? symbols.refKeyMarker
+
 	return function serializer(sourceRefMap) {
 		const output = []
 		const outputRefMap = []
@@ -9,8 +14,8 @@ export function makeSerializer(grammar, metaKeys) {
 		const decimalFormat =  new Intl.NumberFormat('en-US', { minimumFractionDigits: 1 })
 
 		function tryDeref(refOrObject, sourceRefMap, path = []) {
-			const selfId = refOrObject ? refOrObject[metaKeys.self || selfKey] : undefined;
-			const object = (refOrObject && refOrObject[metaKeys.ref || refKey] !== undefined) ? sourceRefMap[refOrObject.ref] : selfId!==undefined ? sourceRefMap[selfId] : refOrObject
+			const selfId = refOrObject ? refOrObject[selfKey] : undefined;
+			const object = (refOrObject && refOrObject[refKey] !== undefined) ? sourceRefMap[refOrObject.ref] : selfId!==undefined ? sourceRefMap[selfId] : refOrObject
 
 			return path.reduce((o, k) => o ? tryDeref(o[k], sourceRefMap) : null, object)
 		}
@@ -40,6 +45,9 @@ export function makeSerializer(grammar, metaKeys) {
 			get kindKey() {
 				return kindKey;
 			},
+			get refKeyMarker() {
+				return refKeyMarker;
+			},
 			writeStorable(object)  {
 				context.writeIndents()
 
@@ -54,9 +62,9 @@ export function makeSerializer(grammar, metaKeys) {
 					} else {
 						outputRefMap.push(actualObject)
 
-						output.push(actualObject[metaKeys.kind || kindKey])
+						output.push(actualObject[kindKey])
 						indent++
-						writeSelfAndSuper(output, actualObject, actualObject[metaKeys.kind || kindKey])
+						writeSelfAndSuper(output, actualObject, actualObject[kindKey])
 						indent--
 					}
 

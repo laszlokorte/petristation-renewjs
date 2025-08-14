@@ -22,13 +22,15 @@ const dirs = [
 	}, ignore: false}
 ]
 
-outer:
-for (const {dir, skip, ignore} of dirs) {
+const expectedKeys = new Set([ 'version', 'doctype', 'drawing', 'refMap', 'metaKeys' ]);
+
+
+outer: for (const {dir, skip, ignore} of dirs) {
 	if(ignore) continue;
 
 	const entries = await readdir(join(__dirname, 'examples', dir), { withFileTypes: true });
-	inner:
-	for (const dirEntry of entries) {
+	
+	inner: for (const dirEntry of entries) {
 		if (dirEntry.isFile()) {
 
 			if(skip[dirEntry.name]) {
@@ -41,21 +43,19 @@ for (const {dir, skip, ignore} of dirs) {
 			try {
 				const parsed = parserAutoDetect(content, false)
 				const resultKeys = new Set(Object.keys(parsed));
-				const expectedKeys = new Set([ 'version', 'doctype', 'drawing', 'refMap' ]);
 
 				if(setsEqual(resultKeys, expectedKeys))  {
-					process.stdout.write(".");
+					process.stdout.write("."); // parsing succeeded
 				} else {
-					process.stdout.write("E");
+					process.stdout.write("F"); // unexpected result
 				}
 			} catch(e) {
-				process.stdout.write("E"+"\n");
+				process.stdout.write("E"+"\n"); // parsing failed via exception
 				process.stderr.write(e.toString()+"\n");
 				process.stderr.write(testFile+"\n");
 			}
 		}
 	}
-
 }
 
 

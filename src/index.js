@@ -2,7 +2,7 @@ import {decycle, retrocycle} from './cycle.js'
 import {isDeepEqual} from './compare.js'
 import {makeTokenizer} from './tokenizer.js'
 import {makeReader} from './reader.js'
-import {kindKey, refKey, selfKey} from './symbols.js'
+import symbols from './symbols.js'
 import {makeParser} from './parser.js'
 import {makeSerializer} from './serializer.js'
 import {makeGrammar} from './grammar.js'
@@ -19,7 +19,11 @@ export const tokenizer = makeTokenizer([
 	{name: "string", pattern: /\"(?:(?:\\\\)*\\\"|[^\"])*\"/, cast: (v) => eval(v)},
 ])
 
-export {kindKey, selfKey, refKey}
+export const kindKey = symbols.kindKey
+export const selfKey = symbols.selfKey
+export const refKey = symbols.refKey
+export const refKeyMarker = symbols.refKeyMarker
+
 export {makeSerializer, makeParser, makeGrammar}
 
 export const reader = makeReader(tokenizer)
@@ -28,15 +32,26 @@ export const parserV11 = makeParser(reader, makeGrammar(11))
 export const serializerV11 = makeSerializer(makeGrammar(11))
 export const hierarchyV11 = makeHierarchy(makeGrammar(11))
 
-export const parserAutoDetect = function(inputString, autoDeref = true, metaKeys = {kindKey,
-selfKey,
-refKey}) {
+export const parserAutoDetect = function(inputString, autoDeref = true, metaKeys = {}) {
+
+	const kindKey = metaKeys?.kindKey ?? symbols.kindKey
+	const refKey = metaKeys?.refKey ?? symbols.refKey
+	const selfKey = metaKeys?.selfKey ?? symbols.selfKey
+	const refKeyMarker = metaKeys?.refKeyMarker ?? symbols.refKeyMarker
+
+	const actualMetaKeys = {
+		kindKey,
+		refKey,
+		selfKey,
+		refKeyMarker,
+	}
+
 	const tokenStream = tokenizer(inputString);
 	const r = reader(inputString)
 	const version = r.readAny(["int","className"], true);
 	
 	if(version.type == 'int') {
-		const parser = makeParser(reader, makeGrammar(version.value), autoDeref, metaKeys)
+		const parser = makeParser(reader, makeGrammar(version.value), autoDeref, actualMetaKeys)
 		const p = parser(inputString)
 
 		p.skipAny(["int"])
@@ -45,25 +60,38 @@ refKey}) {
 		p.parseWindowPositionMaybe();
 		p.expectFinish()
 
-		return {version: p.version, doctype: tryDeref(drawing, p.refMap, [metaKeys.kindKey], metaKeys), drawing, refMap: p.refMap};
+		return {
+			version: p.version, 
+			doctype: tryDeref(drawing, p.refMap, [kindKey], actualMetaKeys), 
+			drawing, 
+			refMap: p.refMap,
+			metaKeys: actualMetaKeys,
+		};
 	} else {
-		const parser = makeParser(reader, makeGrammar(-1), autoDeref, metaKeys)
+		const parser = makeParser(reader, makeGrammar(-1), autoDeref, actualMetaKeys)
 		const p = parser(inputString)
 
 		const drawing = p.parseStorable(null, true, false);
 		p.parseWindowPositionMaybe();
 		p.expectFinish()
 
-		return {version: p.version, doctype: tryDeref(drawing, p.refMap, [metaKeys.kindKey], metaKeys), drawing, refMap: p.refMap};
+		return {
+			version: p.version, 
+			doctype: tryDeref(drawing, p.refMap, [kindKey], actualMetaKeys), 
+			drawing, 
+			refMap: p.refMap,
+			metaKeys: actualMetaKeys,
+		};
 	}
 }
 
 export const stringify = (x) => JSON.stringify(decycle(x), null, 2);
 
-export function tryDeref(refOrObject, refMap, path = [], metaKeys = {kindKey,
-selfKey,
-refKey}) {
-	const object = (refOrObject && refOrObject[metaKeys.refKey]) ? refMap[refOrObject.ref] : refOrObject
+export function tryDeref(refOrObject, refMap, path = [], metaKeys = {}) {
+	const refKey = metaKeys?.refKey ?? symbols.refKey
+	const refKeyMarker = metaKeys?.refKeyMarker ?? symbols.refKeyMarker
+
+	const object = (refOrObject && refOrObject[refKeyMarker]) ? refMap[refKey] : refOrObject
 
 	return path.reduce((o, k) => o ? tryDeref(o[k], refMap, [], metaKeys) : null, object)
 }
